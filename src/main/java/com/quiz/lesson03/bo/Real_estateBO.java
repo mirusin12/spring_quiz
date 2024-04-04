@@ -32,6 +32,28 @@ public class Real_estateBO {
 		return real_estateMapper.selectReal_estateListByAreaAndPrice(area, price);
 	}
 	
+	// input: Real_estate
+	// output: int(성공한 행의 개수)
+	public int addRealEstate(Real_estate realEstate) {
+		return real_estateMapper.insertRealEstate(realEstate);
+	}
+	
+	// addRealEstateAsField(realtorId "썅떼빌리버 오피스텔 814호", 45, "월세", 100000, 120)
+	public int addRealEstateAsField(int realtorId, String address, int area, String type, int price, Integer rentPrice) {
+		return real_estateMapper.insertRealEstateAsField(realtorId, address, area, type, price, rentPrice);
+	}
+	
+	// input: id, type, price
+	// output: int(성공한 행 개수)
+	public int updateRealEstateById(int id, String type, int price) {
+		return real_estateMapper.updateRealEstateById(id, type, price);
+	}
+	
+	// input: id
+	// output: int(성공한 행 개수) !! 굳이 출력 하기 싫으면 void로 가능
+	public int deleteRealEstateById(int id) {
+		return real_estateMapper.deleteRealEstateById(id);
+	}
 	
 	
 }
